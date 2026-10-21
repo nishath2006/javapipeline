@@ -1,0 +1,20 @@
+pipeline{
+
+    agent any
+
+    stages{
+
+
+        stage('checkout'){
+                steps{
+                    checkout scm
+                }
+        }
+
+        stage('build and test'){
+            steps{
+                bat 'mvn clean package'
+            }
+        }
+    }
+}
